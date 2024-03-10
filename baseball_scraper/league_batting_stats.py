@@ -98,7 +98,7 @@ def batting_stats_range(start_dt=None, end_dt=None):
         #table[column] = table[column].astype('float')
         table[column] = pd.to_numeric(table[column])
         #table['column'] = table['column'].convert_objects(convert_numeric=True)
-    table = table.drop('', 1)
+    table = table.drop('', axis=1)
     return table
 
 
