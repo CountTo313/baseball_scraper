@@ -93,7 +93,7 @@ def season_game_logs(season):
     max_year = int(datetime.now().year) - 1
     if season > max_year or season < 1871:
         raise ValueError('Season must be between 1871 and {}'.format(max_year))
-    file_name = 'GL{}.TXT'.format(season)
+    file_name = 'gl{}.txt'.format(season)
     z = get_zip_file(gamelog_url.format(season))
     data = pd.read_csv(z.open(file_name), header=None, sep=',', quotechar='"')
     data.columns = gamelog_columns
